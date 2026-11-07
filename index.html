@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tidyleaf Support</title><link rel="stylesheet" href="style.css"></head><body>
 <header><img src="tidyleaf-logo-144.png" alt=""><strong>Tidyleaf</strong></header><nav><a href="index.html">Support</a><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of service</a></nav>
 <h1>Support</h1>
-<p>Need help with <strong>Sort Pages Alphabetically for Confluence</strong> (Page Sorter)? Email <a href="mailto:maorsaban2@gmail.com">maorsaban2@gmail.com</a>. We usually reply within 2 business days.</p>
+<p>Need help with a Tidyleaf app (<strong>Sort Pages Alphabetically for Confluence</strong> or <strong>Sprint Date JQL Functions for Jira</strong>)? Email <a href="mailto:maorsaban2@gmail.com">maorsaban2@gmail.com</a>. We usually reply within 2 business days.</p>
 <h2>How to use Page Sorter</h2>
 <ol>
 <li>Open a Confluence page that has child pages.</li>
@@ -15,5 +15,18 @@
 <p><strong>Why didn't a page move?</strong> You need edit permission on the pages. Folders, whiteboards and databases keep their place; pages are sorted around them.</p>
 <p><strong>Large trees?</strong> Big folders and "all sub-pages" sorts run in the background. Refresh the page tree after a minute.</p>
 <p><strong>Does sorting create new page versions?</strong> No. Only the position in the tree changes, and only pages that are out of order are moved.</p>
+
+<h2 id="sprint-dates">Sprint Date JQL Functions for Jira</h2>
+<p>Use these functions anywhere JQL works: issue search, filters, boards, dashboards and automation.</p>
+<ul>
+<li><code>issue in sprintsStartedBetween("2026-01-01", "2026-03-31")</code> &ndash; issues in sprints that started in that range</li>
+<li><code>issue in sprintsEndedBetween("-30d", "today")</code> &ndash; sprints whose planned end date is in that range</li>
+<li><code>issue in sprintsCompletedBetween("-3m", "today")</code> &ndash; sprints actually completed in that range</li>
+<li><code>issue in sprintsActiveOn("2026-03-15")</code> &ndash; sprints that were running on that day</li>
+<li>Use <code>not in</code> for the opposite, and combine with anything, e.g. <code>project = ABC AND ...</code></li>
+</ul>
+<p><strong>Dates:</strong> exact days (2026-03-31), <em>today</em>, or relative days such as -14d, -2w, -3m, -1y. Ranges include both days and use UTC.<br>
+<strong>First use:</strong> the app loads your sprint list in the background after installation; on very large sites the first search may ask you to try again a minute later.<br>
+<strong>Status and refresh:</strong> Jira settings &rarr; Apps &rarr; <em>Sprint Date JQL Functions</em>. Sprint changes are picked up automatically and a full refresh runs daily.</p>
 <footer class="muted">© 2026 Tidyleaf. Questions: <a href="mailto:maorsaban2@gmail.com">maorsaban2@gmail.com</a></footer>
 </body></html>
